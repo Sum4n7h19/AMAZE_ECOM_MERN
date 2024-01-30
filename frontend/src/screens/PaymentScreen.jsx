@@ -7,8 +7,6 @@ import CheckOutSteps from "../components/CheckOutSteps";
 import { savePaymentMethod } from "../slices/cartSlice";
 
 const PaymentScreen = () => {
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
-
   const dispatch = useDispatch();
   const naviagte = useNavigate();
 
@@ -19,6 +17,8 @@ const PaymentScreen = () => {
       naviagte("/shipping");
     }
   }, [shippingAdress, naviagte]);
+
+  const [paymentMethod, setPaymentMethod] = useState("PayPal");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ const PaymentScreen = () => {
       <h1>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as="Legend">Select Method</Form.Label>
+          <Form.Label as="legend">Select Method</Form.Label>
           <Col>
             <Form.Check
               type="radio"

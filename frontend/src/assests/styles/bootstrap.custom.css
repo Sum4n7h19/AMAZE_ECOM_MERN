@@ -2374,6 +2374,9 @@ textarea.form-control-lg {
   float: left;
   margin-left: -1.5em;
 }
+.center{
+  margin: 0 auto;
+  }
 
 .form-check-reverse {
   padding-right: 1.5em;

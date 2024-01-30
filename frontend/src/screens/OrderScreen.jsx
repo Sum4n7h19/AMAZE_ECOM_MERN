@@ -28,14 +28,15 @@ const OrderScreen = () => {
     useDeliverOrderMutation();
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
-
+  const { userInfo } = useSelector((state) => state.auth);
+  
   const {
     data: paypal,
     isLoading: loadingPayPal,
     error: errorPayPal,
   } = useGetPaypalClientIdQuery();
 
-  const { userInfo } = useSelector((state) => state.auth);
+  
 
   useEffect(() => {
     if (!errorPayPal && !loadingPayPal && paypal.clientId) {
